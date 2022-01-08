@@ -111,7 +111,7 @@ exports.bookinstance_delete_get = function(req, res) {
 exports.bookinstance_delete_post = function(req, res) {
 
     // Delete object and redirect to the list of book instances.
-    BookInstance.findByIdAndRemove(req.body.bookinstanceid, function deleteAuthor(err) {
+    BookInstance.findByIdAndRemove(req.body.bookinstanceid, (err) => {
         if (err) { return next(err); }
         // Success - go to author list
         res.redirect('/catalog/bookinstances')
